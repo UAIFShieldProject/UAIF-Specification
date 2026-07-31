@@ -1,3 +1,4 @@
+[🇷🇺 Русский](README.ru.md) | [🇬🇧 English](README.md)
 # UAIF — Universal AI Filter
 
 **Deterministic, input‑centric security specification for LLMs**  
@@ -104,3 +105,6 @@ If you use UAIF in your research or products, please cite:
   journal = {arXiv preprint},
   year = {2026}
 }
+```
+
+**© 2026 Studio "Architects" | UAIF™**
