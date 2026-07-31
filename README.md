@@ -101,18 +101,14 @@ Please read [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 If you use UAIF in your research or products, please cite:
 
-> Brailovsky, A. (2026). *Universal AI Filter (UAIF): A Deterministic Input-Centric Shield for Mitigating Tokenization-Level LLM Vulnerabilities*. arXiv preprint.
+Brailovsky, A. (2026). Universal AI Filter (UAIF): A Deterministic Input-Centric Shield for Mitigating Tokenization-Level LLM Vulnerabilities. arXiv preprint.
 
-For academic works, use this BibTeX entry:
-
-```bibtex
 @article{brailovsky2026uaif,
-  title={{Universal AI Filter (UAIF): A Deterministic Input-Centric Shield for Mitigating Tokenization-Level LLM Vulnerabilities}},
-  author={Brailovsky, Aleksandr},
-  journal={arXiv preprint},
-  year={2026}
+  title = {{Universal AI Filter (UAIF): A Deterministic Input-Centric Shield for Mitigating Tokenization-Level LLM Vulnerabilities}},
+  author = {Brailovsky, Aleksandr},
+  journal = {arXiv preprint},
+  year = {2026}
 }
-```
 
 ---
 
