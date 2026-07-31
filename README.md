@@ -112,4 +112,4 @@ If you use UAIF in your research or products, please cite:
 
 ---
 
-**© 2026 Studio "Architects" | UAIF™**
+© 2026 Studio "Architects" | UAIF™
