@@ -4,6 +4,8 @@
 
 # UAIF — Universal AI Filter
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21720624.svg)](https://doi.org/10.5281/zenodo.21720624)
+
 **Deterministic, input‑centric security specification for LLMs**  
 Protects against Emoji Smuggling, Homoglyph attacks, and tokenization‑level exploits.
 
@@ -26,7 +28,7 @@ Protects against Emoji Smuggling, Homoglyph attacks, and tokenization‑level ex
 
 ## 🧠 About
 
-**UAIF** is an open‑source standard for deterministic LLM security. Unlike probabilistic Guardrails (NeMo, Llama Guard, Azure Prompt Shield), UAIF operates **before tokenization** and cleans input data at the byte level, without trying to "guess" the attacker's intent.
+**UAIF** is an open‑source standard for deterministic LLM security. Unlike probabilistic Guardrails (NeMo, Llama Guard, Azure Prompt Shield), UAIF operates **before tokenization** and cleans inp[...]
 
 The project is published as **Prior Art** under the MIT License to prevent patenting and provide the industry with a free, verifiable standard.
 
@@ -81,6 +83,7 @@ UAIF is a three‑stage pre‑processing gateway:
 - [Use Cases](./docs/use-cases.md)
 - [FAQ](./docs/faq.md)
 - [Full Manifesto (Russian)](./docs/manifesto.md)
+- 📦 [Zenodo Archive](https://doi.org/10.5281/zenodo.21720624)
 
 ---
 
@@ -101,13 +104,14 @@ Please read [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 If you use UAIF in your research or products, please cite:
 
-Brailovsky, A. (2026). Universal AI Filter (UAIF): A Deterministic Input-Centric Shield for Mitigating Tokenization-Level LLM Vulnerabilities. arXiv preprint.
+Brailovsky, A. (2026). Universal AI Filter (UAIF): A Deterministic Input-Centric Shield for Mitigating Tokenization-Level LLM Vulnerabilities. Zenodo.
 
 @article{brailovsky2026uaif,
   title = {{Universal AI Filter (UAIF): A Deterministic Input-Centric Shield for Mitigating Tokenization-Level LLM Vulnerabilities}},
   author = {Brailovsky, Aleksandr},
-  journal = {arXiv preprint},
-  year = {2026}
+  journal = {Zenodo},
+  year = {2026},
+  doi = {10.5281/zenodo.21720624}
 }
 
 ---
