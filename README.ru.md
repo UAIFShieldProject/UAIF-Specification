@@ -4,110 +4,114 @@
 
 # UAIF — Universal AI Filter
 
-**Детерминированный стандарт безопасности для LLM на уровне входных данных**  
-Защита от Emoji Smuggling, гомоглифов и атак на уровне токенизации.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21720624.svg)](https://doi.org/10.5281/zenodo.21720624)
 
-[![Лицензия: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Звёзды GitHub](https://img.shields.io/github/stars/UAIFShieldProject/UAIF-Specification.svg?style=social)](https://github.com/UAIFShieldProject/UAIF-Specification)
+**Deterministic, input‑centric security specification for LLMs**  
+Protects against Emoji Smuggling, Homoglyph attacks, and tokenization‑level exploits.
 
----
-
-## 📖 Оглавление
-
-- [О проекте](#-о-проекте)
-- [Ключевые возможности](#-ключевые-возможности)
-- [Архитектура](#-архитектура)
-- [Быстрый старт](#-быстрый-старт)
-- [Документация](#-документация)
-- [Лицензия](#-лицензия)
-- [Участие в разработке](#-участие-в-разработке)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/UAIFShieldProject/UAIF-Specification.svg?style=social)](https://github.com/UAIFShieldProject/UAIF-Specification)
 
 ---
 
-## 🧠 О проекте
+## 📖 Table of Contents
 
-**UAIF** — это открытый стандарт детерминированной безопасности для больших языковых моделей. В отличие от вероятностных Guardrails (NeMo, Llama Guard, Azure Prompt Shield), UAIF работает **до токенизации** и очищает входные данные на уровне байтов, не пытаясь «угадать» намерение атакующего.
-
-Проект опубликован как **Prior Art** под лицензией MIT, чтобы предотвратить патентование и дать индустрии бесплатный, проверяемый стандарт.
-
----
-
-## ⚡ Ключевые возможности
-
-- **Детерминизм** — никаких ML-классификаторов, только математика.
-- **Байтовая нормализация** — удаление невидимых Unicode-символов, вариационных селекторов и управляющих кодов.
-- **Рекурсивное декодирование** — раскрытие многослойной обфускации (Base64, Hex, ROT13) с защитой от DoS.
-- **Гомоглиф-фильтр** — двухэтапное схлопывание визуально похожих символов (UTS #39 + NFC).
-- **Адаптивный Mixed‑script анализ** — сохраняет мультиязычные тексты без деградации (FPR <0.1%).
-- **CPU‑нативный** — задержка <5 мс, снижение OPEX до 66%.
-- **Bidirectional Security** — фильтрация RAG‑контекста и исходящих вызовов агентов.
+- [About](#-about)
+- [Key Features](#-key-features)
+- [Architecture](#-architecture)
+- [Quick Start](#-quick-start)
+- [Documentation](#-documentation)
+- [License](#-license)
+- [Contributing](#-contributing)
 
 ---
 
-## 🏗 Архитектура
+## 🧠 About
 
-UAIF — это трёхэтапный пре-процессинговый шлюз:
+**UAIF** is an open‑source standard for deterministic LLM security. Unlike probabilistic Guardrails (NeMo, Llama Guard, Azure Prompt Shield), UAIF operates **before tokenization** and cleans inp[...]
 
-1. **Байтовый скраббинг** — вырезает невидимые управляющие символы.
-2. **Каскадное рекурсивное декодирование** — разворачивает вложенные кодировки.
-3. **Визуально‑семантическое схлопывание** — нормализует гомоглифы и смешанные скрипты.
-
-**Математическая аксиома:**  
-`N(I) = N(N(I))` — функция нормализации детерминирована и идемпотентна.
+The project is published as **Prior Art** under the MIT License to prevent patenting and provide the industry with a free, verifiable standard.
 
 ---
 
-## 🚀 Быстрый старт
+## ⚡ Key Features
 
-1. **Ознакомьтесь со спецификацией:**  
-   📄 [PDF-версия](./spec/UAIF_Specification_v2.pdf)
-
-2. **Изучите исходный код спецификации:**  
-   📝 [LaTeX-файл](./spec/UAIF_Specification_v2.tex)
-
-3. **Прочитайте документацию:**  
-   📚 [Архитектура](./docs/architecture.md) | [Примеры использования](./docs/use-cases.md) | [FAQ](./docs/faq.md)
-
-4. **Присоединяйтесь к сообществу:**  
-   Создавайте Issue, предлагайте улучшения, форкайте и отправляйте Pull Request.
+- **Deterministic** – no ML classifiers, pure mathematics.
+- **Byte‑level normalisation** – removes invisible Unicode chars, variation selectors, and control codes.
+- **Recursive decoding** – unrolls multi‑layer obfuscation (Base64, Hex, ROT13) with DoS protection.
+- **Homoglyph filtering** – two‑stage visual‑semantic collapse (UTS #39 + NFC).
+- **Adaptive Mixed‑script analysis** – preserves multilingual text without degradation (FPR <0.1%).
+- **CPU‑native** – <5 ms latency, up to 66% OPEX reduction.
+- **Bidirectional Security** – filters RAG context and agent tool calls.
 
 ---
 
-## 📚 Документация
+## 🏗 Architecture
 
-- [Полная спецификация (PDF)](./spec/UAIF_Specification_v2.pdf)
-- [Исходный код спецификации (LaTeX)](./spec/UAIF_Specification_v2.tex)
-- [Архитектура UAIF](./docs/architecture.md)
-- [Примеры использования](./docs/use-cases.md)
-- [Часто задаваемые вопросы](./docs/faq.md)
-- [Полный манифест (русский)](./docs/manifesto.md)
+UAIF is a three‑stage pre‑processing gateway:
 
----
+1. **Byte‑Level Scrubbing** – removes invisible control characters.
+2. **Cascaded Recursive Decoding** – unwraps nested encodings.
+3. **Visual‑Semantic Collapse** – normalises homoglyphs and mixed scripts.
 
-## 📄 Лицензия
-
-Проект распространяется под лицензией **MIT**. Подробнее — в файле [LICENSE](./LICENSE).
+**Mathematical axiom:**  
+`N(I) = N(N(I))` — the normalisation function is deterministic and idempotent.
 
 ---
 
-## 🤝 Участие в разработке
+## 🚀 Quick Start
 
-Мы приветствуем любой вклад: исправление опечаток, дополнение примеров, переводы, улучшение кода.  
-Ознакомьтесь с [CONTRIBUTING.md](./CONTRIBUTING.md).
+1. **Read the specification:**  
+   📄 [PDF version](./spec/UAIF_Specification_v2.pdf)
+
+2. **Explore the LaTeX source:**  
+   📝 [LaTeX file](./spec/UAIF_Specification_v2.tex)
+
+3. **Browse documentation:**  
+   📚 [Architecture](./docs/architecture.md) | [Use Cases](./docs/use-cases.md) | [FAQ](./docs/faq.md)
+
+4. **Join the community:**  
+   Open issues, suggest improvements, fork and submit Pull Requests.
 
 ---
 
-## 📝 Цитирование
+## 📚 Documentation
 
-Если вы используете UAIF в своих исследованиях или продуктах, пожалуйста, цитируйте:
+- [Full Specification (PDF)](./spec/UAIF_Specification_v2.pdf)
+- [LaTeX Source](./spec/UAIF_Specification_v2.tex)
+- [Architecture Overview](./docs/architecture.md)
+- [Use Cases](./docs/use-cases.md)
+- [FAQ](./docs/faq.md)
+- [Full Manifesto (Russian)](./docs/manifesto.md)
+- 📦 [Zenodo Archive](https://doi.org/10.5281/zenodo.21720624)
 
-Brailovsky, A. (2026). Universal AI Filter (UAIF): A Deterministic Input-Centric Shield for Mitigating Tokenization-Level LLM Vulnerabilities. arXiv preprint.
+---
+
+## 📄 License
+
+This project is released under the **MIT License**. See [LICENSE](./LICENSE) for details.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions of all kinds: typo fixes, examples, translations, code improvements.  
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md).
+
+---
+
+## 📝 Citation
+
+If you use UAIF in your research or products, please cite:
+
+Brailovsky, A. (2026). Universal AI Filter (UAIF): A Deterministic Input-Centric Shield for Mitigating Tokenization-Level LLM Vulnerabilities. Zenodo.
 
 @article{brailovsky2026uaif,
   title = {{Universal AI Filter (UAIF): A Deterministic Input-Centric Shield for Mitigating Tokenization-Level LLM Vulnerabilities}},
   author = {Brailovsky, Aleksandr},
-  journal = {arXiv preprint},
-  year = {2026}
+  journal = {Zenodo},
+  year = {2026},
+  doi = {10.5281/zenodo.21720624}
 }
 
 ---
