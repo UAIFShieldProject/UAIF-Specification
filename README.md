@@ -1,4 +1,4 @@
-[🇷🇺 Русский](./README.ru.md) | [🇬🇧 English](./README.md)
+[🇷🇺 Русский](/UAIFShieldProject/UAIF-Specification/blob/main/README.ru.md) | [🇬🇧 English](/UAIFShieldProject/UAIF-Specification/blob/main/README.md)
 
 ---
 
